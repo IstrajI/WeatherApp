@@ -38,7 +38,9 @@ CityAdapter - creating a list with favorite cities in CitiesFragment;
 
 DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
-#### View
+
+
+#### [View](https://github.com/IstrajI/WeatherApp/tree/master/WeatherAppTest3/app/src/main/java/nikitin/weatherapp/com/weatherapptest3/Fragments)
 CitiesFragment - first window of application with favorite cities;
 
 MainWindowFragmet - second window of application with current weather data;
