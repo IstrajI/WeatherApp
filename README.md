@@ -16,7 +16,8 @@ It is planned to add the following features:
 ### What was used
 
 The Application was developed on Java with using the following means:
-* **Android Studio** IDE and Gradle.
-* To create a weather icons and other visual elements used **Adobe Photoshop** CS5.
-* For conversion images to vector images **Vector Magic** was used.
-* For weather data I used API of **[OpenWeatherMap.org](https://openweathermap.org/api)**
+* **Android Studio** IDE and Gradle;
+* To create a weather icons and other visual elements used **Adobe Photoshop** CS5;
+* For conversion images to vector images **Vector Magic** was used;
+* For weather data I used API of **[OpenWeatherMap.org](https://openweathermap.org/api)**;
+* **Retrofit** and **GSON** for connection with server and parsing incoming data;
