@@ -41,18 +41,18 @@ DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment
 
 
 #### [View](https://github.com/IstrajI/WeatherApp/tree/master/WeatherAppTest3/app/src/main/java/nikitin/weatherapp/com/weatherapptest3/Fragments)
-CitiesFragment - first window of application with favorite cities;
+**CitiesFragment** - first window of application with favorite cities;
 
-MainWindowFragmet - second window of application with current weather data;
+**MainWindowFragmet** - second window of application with current weather data;
 
-DayForecastFragment - third window of application with daily forecast;
+**DayForecastFragment** - third window of application with daily forecast;
 
-TabsPagerAdapter - work with this three fragments
+**TabsPagerAdapter** - work with this three fragments
 
 #### Rest
-** ApiClient ** - creating retrofit object;
-** APIWeatherInterface ** - for retrofit's request methods;
-** OpenWeatherMapAPI ** - class for request data from OpenWeatherMap.org server;
+**ApiClient** - creating retrofit object;
+**APIWeatherInterface** - for retrofit's request methods;
+**OpenWeatherMapAPI** - class for request data from OpenWeatherMap.org server;
 
 #### Presenters - classes with presenters for each view;
 #### Model - pojo classes which used by retrofit and PreferencesAPI
