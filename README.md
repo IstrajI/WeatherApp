@@ -10,6 +10,9 @@ Now working on:
 It is planned to add the following features:
 * Weekly weather forecast;
 * Analysis of "extreme" weather conditions such as rain, fog, storm and other for the day. Warn user about them through main application window and/or a by the notification.
+---
+
+### What was used
 
 The Application was developed on Java with using the following means:
 * Android Studio IDE and Gradle.
