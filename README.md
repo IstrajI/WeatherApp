@@ -33,29 +33,29 @@ The Application was developed on Java with using the following means:
 
 ### Structure
 #### Adapter
-    CityAdapter - creating a list with favorite cities in CitiesFragment;
+   CityAdapter - creating a list with favorite cities in CitiesFragment;
 
-    DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
+   DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
 #### View
-   **CitiesFragment** - first window of application with favorite cities;
+   CitiesFragment - first window of application with favorite cities;
 
-   **MainWindowFragmet** - second window of application with current weather data;
+   MainWindowFragmet - second window of application with current weather data;
 
-   **DayForecastFragment** - third window of application with daily forecast;
+   DayForecastFragment - third window of application with daily forecast;
 
-   **TabsPagerAdapter** - work with this three fragments
+   TabsPagerAdapter - work with this three fragments
 
 #### Rest
-    **ApiClient** - creating retrofit object;
+   ApiClient - creating retrofit object;
 
-    **APIWeatherInterface** - for retrofit's request methods;
+   APIWeatherInterface - for retrofit's request methods;
 
-    **OpenWeatherMapAPI** - class for request data from OpenWeatherMap.org server;
+   OpenWeatherMapAPI - class for request data from OpenWeatherMap.org server;
 
 #### Presenters - classes with presenters for each view;
 #### Model - pojo classes which used by retrofit and PreferencesAPI
 
-    **CitySuggectionProvider** - for getting cities search suggestion;
+   CitySuggectionProvider - for getting cities search suggestion;
 
-    **PreferencesAPI** - saving favorite cities in preferences file;
+   PreferencesAPI - saving favorite cities in preferences file;
