@@ -37,7 +37,7 @@ The Application was developed on Java with using the following means:
 
    DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
-#### View
+### View
    CitiesFragment - first window of application with favorite cities;
 
    MainWindowFragmet - second window of application with current weather data;
@@ -46,15 +46,16 @@ The Application was developed on Java with using the following means:
 
    TabsPagerAdapter - work with this three fragments
 
-#### Rest
+### Rest
    ApiClient - creating retrofit object;
 
    APIWeatherInterface - for retrofit's request methods;
 
    OpenWeatherMapAPI - class for request data from OpenWeatherMap.org server;
 
-#### Presenters - classes with presenters for each view;
-#### Model - pojo classes which used by retrofit and PreferencesAPI
+### Presenters - classes with presenters for each view;
+### Model - pojo classes which used by retrofit and PreferencesAPI
+
 
    CitySuggectionProvider - for getting cities search suggestion;
 
