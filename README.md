@@ -34,6 +34,7 @@ The Application was developed on Java with using the following means:
 ### Structure
 #### Adapter
 CityAdapter - creating a list with favorite cities in CitiesFragment;
+
 DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
 #### View
@@ -47,11 +48,14 @@ DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment
 
 #### Rest
 **ApiClient** - creating retrofit object;
+
 **APIWeatherInterface** - for retrofit's request methods;
+
 **OpenWeatherMapAPI** - class for request data from OpenWeatherMap.org server;
 
 #### Presenters - classes with presenters for each view;
 #### Model - pojo classes which used by retrofit and PreferencesAPI
 
-CitySuggectionProvider - for getting cities search suggestion
-PreferencesAPI - saving favorite cities in preferences file;
+**CitySuggectionProvider** - for getting cities search suggestion;
+
+**PreferencesAPI** - saving favorite cities in preferences file;
