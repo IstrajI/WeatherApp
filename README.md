@@ -34,8 +34,8 @@ The Application was developed on Java with using the following means:
 
 ### Structure
 #### Adapter
-CityAdapter - creating a list with favorite cities in CitiesFragment
-DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment
+CityAdapter - creating a list with favorite cities in CitiesFragment;
+DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
 #### View
 CitiesFragment - first window of application with favorite cities;
