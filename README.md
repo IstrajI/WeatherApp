@@ -14,7 +14,7 @@ It is planned to add the following features:
 ---
 
 ### How it's look now
-![Alt text](https://github.com/IstrajI/WeatherApp/blob/master/Pictures/CitiesScreen.png "Optional title")
+![Alt text](https://github.com/IstrajI/WeatherApp/blob/master/Pictures/CitiesScreen.png "Optional title" =100x20)
 ![Pish1](http://haa.su/HMt/)
 ![Pish2](http://haa.su/HMt/)
 ![Pish3](http://haa.su/HMt/)
