@@ -1,6 +1,6 @@
 # WeatherApp
 ### Description
-WeatherApp - is a mobile application for Android OC. It's main purpose - obtain information about the weather. Functions that are currently done:
+**WeatherApp** - is a mobile application for **Android OC**. It's main purpose - obtain weather information. Functions that are currently done:
 * Search and add cities in favorite list;
 * Get weather by your GPS coordinates;
 
