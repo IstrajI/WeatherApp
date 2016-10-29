@@ -15,10 +15,8 @@ It is planned to add the following features:
 
 ### How it's look now
 <img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/CitiesScreen.png" width="180" height="320">
-![Alt text]( = 250x250)
-![Pish1](http://haa.su/HMt/)
-![Pish2](http://haa.su/HMt/)
-![Pish3](http://haa.su/HMt/)
+<img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/MainWindowScreen.png" width="180" height="320">
+<img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/Suggestions.png" width="180" height="320">
 
 ---
 
