@@ -1,6 +1,7 @@
 package nikitin.weatherapp.com.weatherapptest3.Presenters;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,6 +10,19 @@ import nikitin.weatherapp.com.weatherapptest3.Adapter.DailyWeatherAdapter;
 import nikitin.weatherapp.com.weatherapptest3.View.DayForecastFragment;
 import nikitin.weatherapp.com.weatherapptest3.Model.ForecastModel.ForecastResponse;
 import nikitin.weatherapp.com.weatherapptest3.Model.ForecastModel.ForecastWeather;
+=======
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import nikitin.weatherapp.com.weatherapptest3.DailyForecastSimpleElement;
+import nikitin.weatherapp.com.weatherapptest3.DailyWeatherAdapter;
+import nikitin.weatherapp.com.weatherapptest3.Fragments.DayForecastFragment;
+import nikitin.weatherapp.com.weatherapptest3.model.Forecast.ForecastResponse;
+import nikitin.weatherapp.com.weatherapptest3.model.Forecast.ForecastWeather;
+import nikitin.weatherapp.com.weatherapptest3.rest.APIWeatherInterface;
+>>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 import nikitin.weatherapp.com.weatherapptest3.rest.OpenWeatherMapAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
