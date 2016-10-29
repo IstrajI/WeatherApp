@@ -1,5 +1,5 @@
 # WeatherApp
-### Description
+## Description
 **WeatherApp** - is a mobile application for **Android OC**. It's main purpose - obtain weather information. Functions that are currently done:
 * Search and add cities in favorite list;
 * Get weather by your GPS coordinates;
@@ -13,14 +13,14 @@ It is planned to add the following features:
 
 ---
 
-### How it's look now
+## How it's look now
 <img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/CitiesScreen.png" width="180" height="320">
 <img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/MainWindowScreen.png" width="180" height="320">
 <img src="https://github.com/IstrajI/WeatherApp/blob/master/Pictures/Suggestions.png" width="180" height="320">
 
 ---
 
-### What was used
+## What was used
 
 The Application was developed on Java with using the following means:
 * **Android Studio** IDE and Gradle;
@@ -31,7 +31,7 @@ The Application was developed on Java with using the following means:
 
 ---
 
-### Structure
+## Structure
 
 ### Adapter
       CityAdapter - creating a list with favorite cities in CitiesFragment;
