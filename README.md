@@ -15,7 +15,9 @@ It is planned to add the following features:
 
 ### How it's look now
 
-![Image alt](http://haa.su/HMt/)
+![Pish1](http://haa.su/HMt/)
+![Pish2](http://haa.su/HMt/)
+![Pish3](http://haa.su/HMt/)
 
 ### What was used
 
@@ -25,5 +27,6 @@ The Application was developed on Java with using the following means:
 * For conversion images to vector images **Vector Magic** was used;
 * For weather data I used API of **[OpenWeatherMap.org](https://openweathermap.org/api)**;
 * **Retrofit** and **GSON** for connection with server and parsing incoming data;
+
 
 
