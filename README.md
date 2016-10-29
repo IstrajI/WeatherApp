@@ -28,5 +28,25 @@ The Application was developed on Java with using the following means:
 * For weather data I used API of **[OpenWeatherMap.org](https://openweathermap.org/api)**;
 * **Retrofit** and **GSON** for connection with server and parsing incoming data;
 
+### Structure
+Adapter
+CityAdapter - creating a list with favorite cities in CitiesFragment
+DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment
 
+View
+CitiesFragment - first window of application with favorite cities;
+MainWindowFragmet - second window of application with current weather data;
+DayForecastFragment - third window of application with daily forecast;
+TabsPagerAdapter - work with this three fragments
+
+Rest
+ApiClient - creating retrofit object;
+APIWeatherInterface - for retrofit's request methods;
+OpenWeatherMapAPI - class for request data from OpenWeatherMap.org server;
+
+Presenters - classes with presenters for each view;
+Model - pojo classes which used by retrofit and PreferencesAPI
+
+CitySuggectionProvider - for getting cities search suggestion
+PreferencesAPI - saving favorite cities in preferences file;
 
