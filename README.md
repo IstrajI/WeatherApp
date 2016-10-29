@@ -35,12 +35,16 @@ The Application was developed on Java with using the following means:
 ### Structure
 #### Adapter
 CityAdapter - creating a list with favorite cities in CitiesFragment;
+
 DailyWeatherAdapter - creating a list with daily forecast in DayForecastFragment;
 
 #### View
 CitiesFragment - first window of application with favorite cities;
+
 MainWindowFragmet - second window of application with current weather data;
+
 DayForecastFragment - third window of application with daily forecast;
+
 TabsPagerAdapter - work with this three fragments
 
 #### Rest
