@@ -8,7 +8,6 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.annotation.Nullable;
-<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,29 +15,6 @@ import java.util.List;
 import nikitin.weatherapp.com.weatherapptest3.Model.ForecastModel.City;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.*;
 import nikitin.weatherapp.com.weatherapptest3.rest.OpenWeatherMapAPI;
-=======
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import nikitin.weatherapp.com.weatherapptest3.Server.JSONParser;
-import nikitin.weatherapp.com.weatherapptest3.Server.ResponseCallback;
-import nikitin.weatherapp.com.weatherapptest3.Server.WeatherAPI;
-import nikitin.weatherapp.com.weatherapptest3.model.*;
-import nikitin.weatherapp.com.weatherapptest3.model.Weather;
-import nikitin.weatherapp.com.weatherapptest3.rest.APIWeatherInterface;
-import nikitin.weatherapp.com.weatherapptest3.rest.ApiClient;
-import nikitin.weatherapp.com.weatherapptest3.rest.OpenWeatherMapAPI;
-import retrofit2.Call;
-import retrofit2.Callback;
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 import retrofit2.Response;
 
 /**

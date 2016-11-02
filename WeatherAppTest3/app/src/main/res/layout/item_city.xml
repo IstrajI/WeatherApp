@@ -4,8 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="5dp"
+    android:descendantFocusability="blocksDescendants"
     android:elevation="5dp"
-    android:background="@drawable/shape_rounded"
+    android:background="@drawable/shape_rounded_active"
     style="@style/CustomTextView">
 
     <android.support.v7.widget.AppCompatRadioButton

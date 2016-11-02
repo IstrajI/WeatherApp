@@ -1,12 +1,12 @@
 package nikitin.weatherapp.com.weatherapptest3.rest;
 
 import android.util.Log;
-import com.google.gson.annotations.SerializedName;
+
 import java.io.IOException;
-import nikitin.weatherapp.com.weatherapptest3.Weather;
-import nikitin.weatherapp.com.weatherapptest3.model.FindCityResponse;
-import nikitin.weatherapp.com.weatherapptest3.model.Forecast.ForecastResponse;
-import nikitin.weatherapp.com.weatherapptest3.model.WeatherResponse;
+
+import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.FindCityResponse;
+import nikitin.weatherapp.com.weatherapptest3.Model.ForecastModel.ForecastResponse;
+import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.WeatherResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 import nikitin.weatherapp.com.weatherapptest3.Adapter.CityAdapter;
 import nikitin.weatherapp.com.weatherapptest3.View.CitiesFragment;
 import nikitin.weatherapp.com.weatherapptest3.PreferencesAPI;
@@ -19,16 +18,6 @@ import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.Data;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.WeatherResponse;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.Wind;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.Weather;
-=======
-import nikitin.weatherapp.com.weatherapptest3.CityAdapter;
-import nikitin.weatherapp.com.weatherapptest3.Fragments.CitiesFragment;
-import nikitin.weatherapp.com.weatherapptest3.PreferencesAPI;
-import nikitin.weatherapp.com.weatherapptest3.model.Data;
-import nikitin.weatherapp.com.weatherapptest3.model.Sys;
-import nikitin.weatherapp.com.weatherapptest3.model.WeatherResponse;
-import nikitin.weatherapp.com.weatherapptest3.model.Weather;
-import nikitin.weatherapp.com.weatherapptest3.model.Wind;
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 import nikitin.weatherapp.com.weatherapptest3.rest.OpenWeatherMapAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,7 +45,7 @@ public class CitiesPresenter implements GoogleApiClient.ConnectionCallbacks, Goo
         preferencesAPI = PreferencesAPI.getInstance(activity);
         //preferencesAPI.clear();
 
-        citiesListAdapter = new CityAdapter(activity, this, new ArrayList<WeatherResponse>());
+        citiesListAdapter = CityAdapter.getInstance(activity, new ArrayList<WeatherResponse>(), citiesView.getCitiesList());
         citiesView.getCitiesList().setAdapter(citiesListAdapter);
 
 
@@ -149,9 +138,9 @@ public class CitiesPresenter implements GoogleApiClient.ConnectionCallbacks, Goo
         try {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
             //System.out.println(mLastLocation.getLatitude() + " " +mLastLocation.getLongitude());
-            if (mLastLocation != null) {
-                getCityByCoordinate(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-            }
+            //if (mLastLocation != null) {
+                getCityByCoordinate(43,43);
+            //}
         }
         catch(SecurityException ex) {
             System.out.println("EXEPTION");

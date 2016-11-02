@@ -1,32 +1,12 @@
 package nikitin.weatherapp.com.weatherapptest3;
 
-<<<<<<< HEAD
-=======
-import android.app.ActivityManager;
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-=======
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapRegionDecoder;
-import android.graphics.Color;
-import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Debug;
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
@@ -34,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-<<<<<<< HEAD
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -42,76 +21,26 @@ import android.widget.ImageView;
 import nikitin.weatherapp.com.weatherapptest3.Presenters.MainPresenter;
 import nikitin.weatherapp.com.weatherapptest3.View.CitiesFragment;
 import nikitin.weatherapp.com.weatherapptest3.View.TabsPagerAdapter;
-=======
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import nikitin.weatherapp.com.weatherapptest3.Fragments.CitiesFragment;
-import nikitin.weatherapp.com.weatherapptest3.Fragments.TabsPagerAdapter;
-import nikitin.weatherapp.com.weatherapptest3.Server.ResponseCallback;
-import nikitin.weatherapp.com.weatherapptest3.Server.WeatherAPI;
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     SearchView searchView;
-<<<<<<< HEAD
     private ImageView imageView;
     MainPresenter presenter;
-=======
-
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mActionBarToolbar);
 
-        ImageView iv = (ImageView)findViewById(R.id.mainActivityImage);
-        iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView = (ImageView)findViewById(R.id.mainActivityImage);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         presenter = new MainPresenter(this);
         presenter.createBackground();
-=======
-
-        Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-        setSupportActionBar(mActionBarToolbar);
-
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-        int height = metrics.heightPixels;
-        int width = metrics.widthPixels;
-
-        ImageView iv = (ImageView)findViewById(R.id.mainActivityImage);
-        iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        Bitmap bm = decodeSampledBitmapFromResource(getResources(), R.drawable.main_background3, 1080, 1920);
-        iv.setImageBitmap(bm);
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter tabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
@@ -122,28 +51,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             public void onPageSelected(int position) {
                 if (position == 0) {
                     setTitle("Choose city");
-<<<<<<< HEAD
                     ImageView firstTab = (ImageView)findViewById(R.id.first_tab);
                     firstTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_active));
-=======
-
-                    ImageView firstTab = (ImageView)findViewById(R.id.first_tab);
-                    firstTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_active));
-
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
                     ImageView secondTab = (ImageView)findViewById(R.id.second_tab);
                     secondTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_deactive));
                 } else if (position == 1){
                     setTitle(CitiesFragment.activeCityName);
-<<<<<<< HEAD
                     ImageView firstTab = (ImageView)findViewById(R.id.first_tab);
                     firstTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_deactive));
-=======
-
-                    ImageView firstTab = (ImageView)findViewById(R.id.first_tab);
-                    firstTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_deactive));
-
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
                     ImageView secondTab = (ImageView)findViewById(R.id.second_tab);
                     secondTab.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle2_active));
                 }
@@ -170,14 +85,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
     }
 
-<<<<<<< HEAD
     public void setImageViewBackground(Bitmap bitmap) {
         imageView.setImageBitmap(bitmap);
     }
 
     @Override
-=======
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
@@ -203,39 +115,4 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onQueryTextChange(String newText) {
         return false;
     }
-<<<<<<< HEAD
-=======
-
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        options.inJustDecodeBounds = false;
-        options.inPreferredConfig =  Bitmap.Config.RGB_565;
-
-        Bitmap bm = BitmapFactory.decodeResource(res, resId, options);
-        return bm;
-    }
-
-    public static int calculateInSampleSize(
-        BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        System.out.println("PARAMETRS " +height +" " +width);
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-            final int heightRatio = Math.round((float) height / (float) reqHeight);
-            final int widthRatio = Math.round((float) width / (float) reqWidth);
-
-            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-            System.out.println("InSampleSize " +inSampleSize +" H" +options.outHeight +"W " +options.outWidth +" Mime" +options.outMimeType);
-        }
-        return inSampleSize;
-    }
->>>>>>> 25e2c86627058a9b472112f5875a1d5c15e91bdb
 }

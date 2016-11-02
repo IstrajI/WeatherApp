@@ -1,51 +1,73 @@
-package nikitin.weatherapp.com.weatherapptest3.model;
-
-import com.google.gson.annotations.SerializedName;
+package nikitin.weatherapp.com.weatherapptest3.Model;
 
 /**
- * Created by Влад on 04.10.2016.
+ * Created by Влад on 22.08.2016.
  */
 public class Weather {
-    @SerializedName("id")
-    private int id;
-    @SerializedName("main")
-    private String main;
-    @SerializedName("description")
-    private String description;
-    @SerializedName("icon")
-    private String icon;
-    public Weather(int id, String main, String description, String icon) {
-        this.id = id;
-        this.main = main;
-        this.description = description;
-        this.icon = icon;
+    private int temperature;
+    private String weatherName;
+    private int pressure;
+    private int windSpeed;
+    private int humidity;
+
+    public Weather() {
+        this.temperature = 0;
+        this.weatherName = "none";
+        this.pressure = 0;
+        this.windSpeed = 0;
+        this.humidity = 0;
     }
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMain() {
-        return main;
-    }
-    public void setMain(String main) {
-        this.main = main;
+    public Weather(int temperature, String weatherName, int pressure, int windSpeed, int humidity) {
+        this.temperature = temperature;
+        this.weatherName = weatherName;
+        this.pressure = pressure;
+        this.windSpeed = windSpeed;
+        this.humidity = humidity;
     }
 
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public String toString() {
+        return "" +temperature +weatherName +pressure +windSpeed +humidity;
     }
 
-    public String getIcon() {
-        return icon;
+    public int getTemperature() {
+        return temperature;
     }
-    public void setIcon(String icon) {
-        this.icon = icon;
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getWeatherName() {
+        return weatherName;
+    }
+
+    public void setWeatherName(String weatherName) {
+        this.weatherName = weatherName;
+    }
+
+    public int getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(int pressure) {
+        this.pressure = pressure;
+    }
+
+    public int getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(int windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public int getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
     }
 }

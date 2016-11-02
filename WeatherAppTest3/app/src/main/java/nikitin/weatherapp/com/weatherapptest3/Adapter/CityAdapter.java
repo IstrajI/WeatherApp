@@ -5,10 +5,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.WeatherResponse;
 import nikitin.weatherapp.com.weatherapptest3.R;
@@ -22,32 +28,55 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
     public static int selectedPosition = -1;
     Activity mainActivity;
     CitiesPresenter citiesPresenter;
-    public static CityAdapter cityAdapter;
+    private static CityAdapter cityAdapter;
+    ListView listView;
 
     final int TYPE_ITEM_CITY = 0;
     final int TYPE_ITEM_LOCATION = 1;
     final int TYPES_AMOUNT = 2;
 
-    public CityAdapter(Context context, ArrayList<WeatherResponse> cities) {
+    private CityAdapter(final Context context, ArrayList<WeatherResponse> cities, ListView listView) {
         super(context, 0, cities);
         this.mainActivity = (Activity)context;
+        this.listView = listView;
+
+        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                for (int i = 0; i < adapterView.getCount(); i++) {
+                    selectedPosition = pos;
+                    RadioButton rd;
+                    if (i == pos) {
+                        view.setBackgroundResource(R.drawable.shape_rounded_active);
+                        rd = (RadioButton) view.findViewById(R.id.activeCity);
+                        rd.setChecked(i == pos);
+                    } else {
+                        adapterView.getChildAt(i).setBackgroundResource(R.drawable.shape_rounded_inactive);
+                        rd = (RadioButton) adapterView.getChildAt(i).findViewById(R.id.activeCity);
+                        rd.setChecked(i == pos);
+                    }
+
+                    if (getActiveCityId() == 0) {
+                        continue;
+                    }
+
+                    TabsPagerAdapter.mainWindowFragment.updateWeather(getActiveCityId());
+                }
+                notifyDataSetChanged();
+            }
+        });
     }
 
-    public CityAdapter(Context context, CitiesPresenter citiesPresenter, ArrayList<WeatherResponse> cities) {
-        super(context, 0, cities);
-        this.citiesPresenter = citiesPresenter;
-        this.mainActivity = (Activity)context;
-    }
-
-    public static CityAdapter getInstance(Context context, ArrayList<WeatherResponse> cities) {
+    public static CityAdapter getInstance(Context context, ArrayList<WeatherResponse> cities, ListView listView) {
         if (cityAdapter == null) {
-            cityAdapter = new CityAdapter(context, cities);
+            cityAdapter = new CityAdapter(context, cities, listView);
         }
         return cityAdapter;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        System.out.println("Parent" + parent);
         int type = getItemViewType(position);
         if (convertView == null) {
             switch(type) {
@@ -66,12 +95,15 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
         WeatherResponse city = this.getItem(position);
         cityName.setText(city.getName());
         cityShortWeather.setText(city.getData().getTemp() + ", " + city.getWeathers().get(0).getMain());
+        RadioButton rd = (RadioButton) convertView.findViewById(R.id.activeCity);
+        //rd.setEnabled(false);
         createRadioButton(convertView, position, false);
         if (type == TYPE_ITEM_CITY) {
             createDeleteButton(convertView, position);
         } else if (type == TYPE_ITEM_LOCATION) {
             createFindLocationButton(convertView, position);
         }
+
         return convertView;
     }
 
@@ -92,20 +124,32 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
         return 0;
     }
 
-    private void createRadioButton(View convertView, final int position, boolean isChecked) {
+    private void createRadioButton(final View convertView, final int position, boolean isChecked) {
         RadioButton r = (RadioButton)convertView.findViewById(R.id.activeCity);
-        r.setChecked(position == selectedPosition);
         r.setTag(position);
         r.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedPosition = (Integer) view.getTag();
+                selectedPosition = (int) view.getTag();
+
+                for (int i = 0; i < getCount(); i++) {
+                    LinearLayout listElement = (LinearLayout) listView.getChildAt(i);
+                    listElement.setBackgroundResource(R.drawable.shape_rounded_inactive);
+                    RadioButton radioButton = (RadioButton) listElement.findViewById(R.id.activeCity);
+                    radioButton.setChecked(false);
+                }
+
+                LinearLayout element = (LinearLayout) view.getParent();
+                element.setBackgroundResource(R.drawable.shape_rounded_active);
+                RadioButton rb = (RadioButton) view;
+                rb.setChecked(true);
+
                 if (getActiveCityId() == 0) {
-                    notifyDataSetChanged();
                     return;
                 }
+
                 TabsPagerAdapter.mainWindowFragment.updateWeather(getActiveCityId());
-                notifyDataSetChanged();
+                cityAdapter.notifyDataSetChanged();
             }
         });
     }
