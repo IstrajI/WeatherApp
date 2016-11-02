@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,6 +16,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.sql.SQLOutput;
+=======
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.TextView;
+>>>>>>> d3f7f4ada02c1e78c0240707aeb864338376c40e
 import java.util.ArrayList;
 import nikitin.weatherapp.com.weatherapptest3.Model.WeatherModel.WeatherResponse;
 import nikitin.weatherapp.com.weatherapptest3.R;
@@ -30,10 +37,10 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
     CitiesPresenter citiesPresenter;
     private static CityAdapter cityAdapter;
     ListView listView;
-
     final int TYPE_ITEM_CITY = 0;
     final int TYPE_ITEM_LOCATION = 1;
     final int TYPES_AMOUNT = 2;
+
 
     private CityAdapter(final Context context, ArrayList<WeatherResponse> cities, ListView listView) {
         super(context, 0, cities);
@@ -77,6 +84,7 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         System.out.println("Parent" + parent);
+
         int type = getItemViewType(position);
         if (convertView == null) {
             switch(type) {
@@ -97,13 +105,13 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
         cityShortWeather.setText(city.getData().getTemp() + ", " + city.getWeathers().get(0).getMain());
         RadioButton rd = (RadioButton) convertView.findViewById(R.id.activeCity);
         //rd.setEnabled(false);
+
         createRadioButton(convertView, position, false);
         if (type == TYPE_ITEM_CITY) {
             createDeleteButton(convertView, position);
         } else if (type == TYPE_ITEM_LOCATION) {
             createFindLocationButton(convertView, position);
         }
-
         return convertView;
     }
 
@@ -124,8 +132,10 @@ public class CityAdapter extends ArrayAdapter<WeatherResponse> {
         return 0;
     }
 
+
     private void createRadioButton(final View convertView, final int position, boolean isChecked) {
         RadioButton r = (RadioButton)convertView.findViewById(R.id.activeCity);
+
         r.setTag(position);
         r.setOnClickListener(new View.OnClickListener() {
             @Override

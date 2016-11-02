@@ -45,7 +45,9 @@ public class CitiesPresenter implements GoogleApiClient.ConnectionCallbacks, Goo
         preferencesAPI = PreferencesAPI.getInstance(activity);
         //preferencesAPI.clear();
 
+
         citiesListAdapter = CityAdapter.getInstance(activity, new ArrayList<WeatherResponse>(), citiesView.getCitiesList());
+
         citiesView.getCitiesList().setAdapter(citiesListAdapter);
 
 
@@ -138,9 +140,15 @@ public class CitiesPresenter implements GoogleApiClient.ConnectionCallbacks, Goo
         try {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
             //System.out.println(mLastLocation.getLatitude() + " " +mLastLocation.getLongitude());
+<<<<<<< HEAD
             //if (mLastLocation != null) {
                 getCityByCoordinate(43,43);
             //}
+=======
+            if (mLastLocation != null) {
+                getCityByCoordinate(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            }
+>>>>>>> d3f7f4ada02c1e78c0240707aeb864338376c40e
         }
         catch(SecurityException ex) {
             System.out.println("EXEPTION");

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         imageView = (ImageView)findViewById(R.id.mainActivityImage);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
+
         presenter = new MainPresenter(this);
         presenter.createBackground();
 

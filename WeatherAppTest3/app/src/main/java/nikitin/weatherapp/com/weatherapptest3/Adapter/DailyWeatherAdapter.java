@@ -41,6 +41,4 @@ public class DailyWeatherAdapter extends ArrayAdapter<DailyForecastSimpleElement
         timeView.setText(format1.format(dfse.getDate()));
         return convertView;
     }
-
-
 }

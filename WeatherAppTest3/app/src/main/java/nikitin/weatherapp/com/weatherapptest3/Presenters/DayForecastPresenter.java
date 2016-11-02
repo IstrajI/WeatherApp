@@ -1,10 +1,13 @@
 package nikitin.weatherapp.com.weatherapptest3.Presenters;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
+=======
+>>>>>>> d3f7f4ada02c1e78c0240707aeb864338376c40e
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -47,6 +50,7 @@ public class DayForecastPresenter {
                 List<DailyForecastSimpleElement> list = new ArrayList<DailyForecastSimpleElement>();
                 List<ForecastWeather> forecastWeatherList = response.body().getList();
                 System.out.println("size" + response.body().getList().size());
+
                 for (int i = 0; i < forecastWeatherList.size(); i++) {
                     Date date = new Date(response.body().getList().get(i).getDt() * 1000L);
                     double temperature = response.body().getList().get(i).getData().getTemp();
